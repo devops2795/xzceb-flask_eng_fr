@@ -24,7 +24,7 @@ def english_to_french(englishText):
     FRENCHTEXT = language_translator.translate(
     text = englishText,
     model_id = 'en-fr').get_result()
-    return FRENCHTEXT
+    return FRENCHTEXT['translations'][0]['translation']
 
 def french_to_english(frenchText):
     """
@@ -33,4 +33,4 @@ def french_to_english(frenchText):
     ENGLISHTEXT = language_translator.translate(
     text = frenchText,
     model_id = 'fr-en').get_result()
-    return ENGLISHTEXT
+    return ENGLISHTEXT['translations'][0]['translation']
